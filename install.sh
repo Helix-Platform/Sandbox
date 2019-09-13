@@ -53,7 +53,7 @@ then
   read MYIP
   echo 'Enter local ip'
   read MYIPlocal
-  git clone https://github.com/fabiocabrini/Helix_IoT_MQTT.git
+  git clone https://github.com/Helix-Platform/Sandbox-Mqtt.git
   cd Helix_IoT_MQTT
   chmod +x docker-compose.yml
   mv docker-compose.yml docker-compose-old.yml
