@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "f14c1b29-9115-4429-b967-380658a88ba0",
+		"name": "helix_demo_orion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "altera dados",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "10000"
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities/urn:ngsi-ld:level:001/attrs/level/value",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"urn:ngsi-ld:level:001",
+						"attrs",
+						"level",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://18.228.128.48:1026/version",
+					"protocol": "http",
+					"host": [
+						"18",
+						"228",
+						"128",
+						"48"
+					],
+					"port": "1026",
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualiza dados geojson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"location\": {\r\n    \"value\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [-23.7154308, -46.5472263]\r\n    },\r\n    \"type\": \"geo:json\"\r\n}}"
+				},
+				"url": {
+					"raw": "http://18.228.128.48:1026/v2/entities/urn:ngsi-ld:bike:002/attrs",
+					"protocol": "http",
+					"host": [
+						"18",
+						"228",
+						"128",
+						"48"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"urn:ngsi-ld:bike:002",
+						"attrs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar entidade",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities/{{entitie}}",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"{{entitie}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busca dados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities/",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar statistics",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/statistics",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar cache statistics",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/cache/statistics",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"cache",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{orion}}:1026/statistics",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cache statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{orion}}:1026/cache/statistics",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"cache",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busca dados lista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities?offset=100&limit=100",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "100"
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscrição cygnus historical data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Notify Cygnus of all context changes\",\r\n  \"subject\": {\r\n    \"entities\": [\r\n      {\r\n        \"idPattern\": \".*\"\r\n      }\r\n    ]\r\n  },\r\n  \"notification\": {\r\n    \"http\": {\r\n      \"url\": \"http://172.17.0.1:5050/notify\"\r\n    },\r\n    \"attrsFormat\": \"legacy\"\r\n  },\r\n  \"throttling\": 5\r\n}"
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/subscriptions",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar subscriptions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/subscriptions",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cria entidade geojson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"disabled": false,
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"urn:ngsi-ld:dog:001\",\r\n  \"type\": \"dog\",\r\n  \"location\": {\r\n    \"value\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [2.186447514, 41.3763726]\r\n    },\r\n    \"type\": \"geo:json\"\r\n}}\r\n\r\n  \r\n"
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					]
+				},
+				"description": "cria entidade"
+			},
+			"response": []
+		},
+		{
+			"name": "cria entidade level",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"urn:ngsi-ld:level:001\",\r\n  \"type\": \"iot_device\",\r\n  \"level\": {\r\n  \"value\": \"0\",\r\n  \"type\": \"integer\"\r\n }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "altera dados level",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "50"
+				},
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities/urn:ngsi-ld:level:001/attrs/level/value",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"urn:ngsi-ld:level:001",
+						"attrs",
+						"level",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar entidade level",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{orion}}:1026/v2/entities/urn:ngsi-ld:level:001",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"urn:ngsi-ld:level:001"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "be42a9d9-783d-49c2-bdba-43ecd8b5a868",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "675318f1-24db-40ab-95a2-105f26f3f1ed",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
